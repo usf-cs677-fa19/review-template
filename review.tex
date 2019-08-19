@@ -1,0 +1,120 @@
+\documentclass{proc}
+\usepackage{graphicx}
+\usepackage{url}
+
+\renewcommand{\abstractname}{Tweet}
+
+\begin{document}
+\title{Title of the Research Paper}
+\author{Reviewed by Your Name}
+\maketitle
+
+\abstract{\it % <- This makes the tweet italicized.
+A very concise (Twitter style) summary of the work. I won't check for 280 characters --- but aim a few lines or so. Make a quick, insightful point.
+}
+
+\section{Instructions}
+The guidelines for your research paper evaluations follow. These should be short (maximum 2 pages, not counting references). Remember that the idea is to think critically about the work: insight is more important than writing a lot of text.
+
+When you write your review, imagine that you are a journal editor and the paper was just submitted to your very own journal. You don't want to blindly accept all papers, lest you decrease the quality of your journal's content, but at the same time if you are too harsh/picky on the small details then you won't have anything to publish.
+
+And, of course, you should remove the instructions when writing your reviews.
+
+\section{Paper Overview}
+Imagine that you get in an elevator with an interviewer from (\textit{insert amazing tech company here}). You had just mentioned that you read this paper in CS~677, so the interviewer replies, ``sounds intriguing -- tell me what's different or cool about the paper \textbf{before} we reach our floor.''
+
+Don't just summarize the work here -- it's easy to remember a generic line or two about what a paper/algorithm/system does. Instead, describe why it \underline{matters}; what are the trade-offs being tackled? Why is it unique? What was the actual issue the company/researcher was trying to solve when they designed it? An example is provided in Section~\ref{sec:overview-example}.
+
+\subsection{Example Paper Overview}
+\label{sec:overview-example}
+Cassandra~\cite{lakshman2010cassandra} was built at Facebook to deal with a common social networking problem: write-heavy workloads. People on Facebook tend to generate lots of text-based messages that need to be stored somewhere. Interestingly enough, not many people actually \emph{read} the things written by their friends, so read performance was not given as high of a priority. Cassandra is unique in that it employs a distributed hash table network design similar to Dynamo~\cite{decandia2007dynamo} while supporting a column-oriented data model similar to BigTable~\cite{chang2008bigtable}.
+
+\section{Critical Analysis}
+This is the main point of the paper evaluation: thinking critically about the work. This should be the majority of your report content. You might discuss:
+\begin{itemize}
+\item What are the trade-offs being made in this work?
+\item What are some situations where the trade-offs do not make sense?
+\item Construct situations which cause the system to fail, or assumptions to break down.
+\item If any benchmarks were run, did they convey the intended point and make sense? Could you propose a better way to test the system?
+\item What would you do differently if you tackled the same problem?
+\end{itemize}
+Give an overview of your critical analysis here. You can discuss how you felt in general about the paper, complain about typos, or discuss the domain the paper falls into as a whole.
+
+You should determine the position of the paper in its trade-off space. You can do this by extracting the strengths/weaknesses of the approach that the authors have highlighted:
+
+\subsection{Strengths}
+\begin{enumerate}
+\item List strengths claimed by the authors.
+\item Strength 2
+\item Strength 3
+\item Strength 4
+\end{enumerate}
+
+\subsection{Weaknesses}
+\begin{enumerate}
+\item List weaknesses, if any, claimed by the authors.
+\item Weakness 2
+\end{enumerate}
+
+\subsection{Other Strengths/Weaknesses}
+
+Authors will not usually describe all the strengths/weaknesses of their approach (usually this leans heavily toward weaknesses, but sometimes authors don't realize that their approach could be applied to other problems). List or describe these here. \textbf{This is the most important part of the review} because it proves that you have dug into the problem and came up with something new. It could be a design flaw the authors didn't consider, or you could propose an extension to the work that makes it applicable to another problem.
+
+Note that the sizes of the lists above are not prescriptive; you should make them as long or short as required for your analysis.
+
+\section{Accept/Reject Decision}
+After your critical analysis, you must decide whether this paper is worthy of your hypothetical journal. Your decision can be:
+\begin{itemize}
+\item Accept \texttt{(+1)}
+\item Neutral \texttt{(0)}
+\item Reject \texttt{(-1)}
+\end{itemize}
+Obviously since we are reading the paper it was accepted somewhere, but that doesn’t mean you have to agree with that decision!
+
+\section{Question(s)}
+Include thoughtful question(s) you would ask the author, or points you will bring up in the class discussion. This may relate to your critical analysis or accept/reject decision above.
+
+\section{References}
+If you used any external references while writing your review, list them here. Representing someone else's work as your own violates the university honor code. This review was heavily plagiarized from \cite{bigdata}.
+
+\section{Grading}
+For these submissions, grading is based on a simplified scale:
+\begin{itemize}
+\item 10 -- excellent analysis with insightful comments.
+\item 9 -- excellent analysis with minor issues (small inaccuracies or missing details).
+\item 8 -- fulfills the requirements but the analysis is mostly straightforward.
+\item 7 -- not all requirements met, straightforward analysis.
+\item $\leq$ 5 -- substantially missing the mark, not including all elements, obvious inaccuracies, etc.
+\end{itemize}
+
+\section{Submission \& Formatting}
+Submit your write-up in PDF format via canvas. \vspace{1em} % inserts 1-character vertical space
+
+\noindent Some of your tweets and accept/reject decisions will be featured in our class discussions.
+
+By the way, you can insert \texttt{fixed-width text} or even equations:
+
+\begin{equation}
+    \label{simple_equation}
+    a^2 + b^2 = c^2
+\end{equation}
+
+\noindent See Figure~\ref{fig:usf-logo} below for an example of a figure.
+
+% LaTeX will try to place figures automatically by itself.
+\begin{figure}[h!] % 'h!' means 'put this figure here, NOW!'
+    % Figures usually look best centered in the column:
+    \centering
+
+    % Here, we set the figure's size to 65% of the line width.
+    % Many times you'll just want to use the entire line width
+    % (1.0\linewidth).
+    \includegraphics[width=0.65\linewidth]{usf-blue.pdf}
+    \caption{A figure showing USF's logo, sized at 65\% of the line. How glorious.}
+    \label{fig:usf-logo}
+\end{figure}
+
+\bibliographystyle{plain}
+\bibliography{references} 
+
+\end{document}
